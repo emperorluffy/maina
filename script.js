@@ -1,35 +1,41 @@
 'use strict';
-const openWho = document.querySelector('.btn--who');
 
-const overlay = document.querySelector('.overlay');
-
+// Selecting elements
+const btnsOpenWho = document.querySelectorAll('.btn--who');
 const btnCloseWho = document.querySelector('.close--who');
-
+const overlay = document.querySelector('.overlay');
 const thomas = document.querySelector('.thomas');
 
-console.log(openWho);
+// --- Functions ---
 
-const openThomas = function () {
-  console.log('btn clicked');
+/**
+ * Opens the modal/info section
+ */
+const openModal = function () {
   thomas.classList.remove('hidden');
   overlay.classList.remove('hidden');
 };
 
-openWho.addEventListener('click', openThomas);
-
-const closeThomas = function () {
+/**
+ * Closes the modal/info section
+ */
+const closeModal = function () {
   thomas.classList.add('hidden');
   overlay.classList.add('hidden');
 };
 
-btnCloseWho.addEventListener('click', closeThomas);
-overlay.addEventListener('click', closeThomas);
+// --- Event Listeners ---
 
+// Attach open event to all "Who" buttons
+btnsOpenWho.forEach((btn) => btn.addEventListener('click', openModal));
+
+// Close when clicking the close button or the overlay
+btnCloseWho.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+// Optional: Close modal on 'Escape' key press
 document.addEventListener('keydown', function (e) {
-  console.log(e);
-  if (e.key === 'Escape') {
-    if (!thomas.classList.contains('hidden')) {
-      closeThomas();
-    }
+  if (e.key === 'Escape' && !thomas.classList.contains('hidden')) {
+    closeModal();
   }
 });
