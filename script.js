@@ -24,3 +24,12 @@ const closeThomas = function () {
 
 btnCloseWho.addEventListener('click', closeThomas);
 overlay.addEventListener('click', closeThomas);
+
+document.addEventListener('keydown', function (e) {
+  console.log(e);
+  if (e.key === 'Escape') {
+    if (!thomas.classList.contains('hidden')) {
+      closeThomas();
+    }
+  }
+});
