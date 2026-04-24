@@ -3,9 +3,24 @@ const openWho = document.querySelector('.btn--who');
 
 const overlay = document.querySelector('.overlay');
 
-const closeWho = document.querySelector('.close--who');
+const btnCloseWho = document.querySelector('.close--who');
+
+const thomas = document.querySelector('.thomas');
 
 console.log(openWho);
 
-const dog = [2, 3];
-console.log(dog);
+const openThomas = function () {
+  console.log('btn clicked');
+  thomas.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+openWho.addEventListener('click', openThomas);
+
+const closeThomas = function () {
+  thomas.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+btnCloseWho.addEventListener('click', closeThomas);
+overlay.addEventListener('click', closeThomas);
