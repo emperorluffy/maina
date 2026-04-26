@@ -92,45 +92,6 @@ body {
   pointer-events: none; /* Keeps background buttons from being clicked */
 }
 
-/* The Modal Paragraph
-.thomas {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
-  background-color: rgba(160, 160, 160);
-  padding: 3rem;
-  color: azure;
-  border-radius: 15px;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 2000;
-  transition: all 1s ease;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
-  z-index: 1000;
-  transition: all 0.3s;
-}
-
-.hidden {
-  display: none;
-}
-
-.compo {
-  font-size: 2rem;
-  color: bisque;
-  font-style: italic;
-} */
-
 /* The Modal Paragraph */
 .thomas {
   position: fixed;
@@ -152,6 +113,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
