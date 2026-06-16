@@ -1,107 +1,55 @@
 'use strict';
+emailjs.init('UKlUrVqvzAN_5skk7');
+// Toggle Mobile Menu
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
 
-//Who is Thomas Button
-const who = document.querySelector('.thomas');
-const overlay = document.querySelector('.overlay');
-const btnCloseWho = document.querySelector('.close--who');
-const btnOpenWho = document.querySelector('.btn--who');
-
-btnOpenWho.addEventListener('click', function () {
-  who.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+menuIcon.addEventListener('click', () => {
+  menuIcon.classList.toggle('fa-xmark');
+  navbar.classList.toggle('active');
 });
 
-btnCloseWho.addEventListener('click', function () {
-  who.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
+// Scroll Sections Active Link Activation
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
 
-overlay.addEventListener('click', function () {
-  who.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
+window.addEventListener('scroll', () => {
+  let top = window.scrollY;
 
-const closeWho = function () {
-  who.classList.add('hidden');
-  overlay.classList.add('hidden');
-};
+  sections.forEach((sec) => {
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
 
-document.addEventListener('keydown', function (e) {
-  console.log(e.key);
-
-  if (e.key === 'Escape') {
-    if (!who.classList.contains('hidden')) {
-      closeWho();
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((links) => {
+        links.classList.remove('active');
+        document
+          .querySelector('header nav a[href*=' + id + ']')
+          .classList.add('active');
+      });
     }
-  }
+  });
+
+  // Remove menu toggle icons when clicking nav links (scrolls down)
+  menuIcon.classList.remove('fa-xmark');
+  navbar.classList.remove('active');
 });
 
-//Want to play?
-const play = document.querySelector('.play');
-const btnClosePlay = document.querySelector('.close--play');
-const btnOpenPlay = document.querySelector('.btn--play');
+function sendEmail(e) {
+  e.preventDefault();
 
-btnOpenPlay.addEventListener('click', function () {
-  play.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-});
+  const form = document.getElementById('contact-form');
 
-btnClosePlay.addEventListener('click', function () {
-  play.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
-
-overlay.addEventListener('click', function () {
-  play.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
-
-const closePlay = function () {
-  play.classList.add('hidden');
-  overlay.classList.add('hidden');
-};
-
-document.addEventListener('keydown', function (e) {
-  console.log(e.key);
-
-  if (e.key === 'Escape') {
-    if (!play.classList.contains('hidden')) {
-      closePlay();
-    }
-  }
-});
-
-//What's New?
-const next = document.querySelector('.next');
-const btnCloseNext = document.querySelector('.close--next');
-const btnOpenNext = document.querySelector('.btn--next');
-
-btnOpenNext.addEventListener('click', function () {
-  next.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-});
-
-btnCloseNext.addEventListener('click', function () {
-  next.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
-
-overlay.addEventListener('click', function () {
-  next.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
-
-const closeNext = function () {
-  next.classList.add('hidden');
-  overlay.classList.add('hidden');
-};
-
-document.addEventListener('keydown', function (e) {
-  console.log(e.key);
-
-  if (e.key === 'Escape') {
-    if (!next.classList.contains('hidden')) {
-      closeNext();
-    }
-  }
-});
+  emailjs.sendForm('service_nzx2dix', 'template_a9wwmp9', form).then(
+    () => {
+      alert('Message sent successfully! I will get back to you soon.');
+      form.reset();
+    },
+    (error) => {
+      alert(
+        'Failed to send the message. Error details: ' + JSON.stringify(error),
+      );
+    },
+  );
+}

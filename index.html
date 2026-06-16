@@ -3,63 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thomas Gakumu | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Thomas Maina</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <div class="container">
-      <section class="header">
-        <div class="me">
-          <div class="me__pic-1"><img src="img/me.jpg" alt="me" /></div>
-          <div class="name">Thomas Maina</div>
+    <header class="header">
+      <a href="#" class="logo">Hi!Welcome<span>.</span></a>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="menu-icon" id="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello, It's Me</h3>
+        <h1>Thomas Gakumu</h1>
+        <h3>
+          And I'm a
+          <span class="multiple-text">Web Developer & Project Manager</span>
+        </h3>
+        <p>
+          Building clean, high-performance web applications and leading
+          technical projects from concept to deployment.
+        </p>
+
+        <div class="social-media">
+          <a href="https://github.com/emperorluffy" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/thomas-gakumu-ab081b1b8/"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://x.com/tacticalyunbten" target="_blank"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
         </div>
-        <nav class="nav-container">
-          <ul class="nav-list">
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#blog">CTO's Desk</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </section>
-      <section class="main">
-        <button class="btn-signin btn--who">Who is Thomas?</button>
-        <button class="btn-signin btn--play">Want to play 🕹️</button>
-        <button class="btn-signin btn--next">What's New?</button>
-      </section>
-      <footer>Footer</footer>
-    </div>
 
-    <div class="thomas hidden">
-      <button class="close--who">&times;</button>
-      <p class="compo">
-        I'm Thomas Maina, a Nairobi-based Software Developer and entrepreneur.
-        Transitioning from a career as an Agricultural Extension Officer, I now
-        apply my problem-solving skills to the world of technology. I'm
-        dedicated to creating work that matters and I'm always happy to chat
-        about new projects or ideas.
-      </p>
-    </div>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+    </section>
 
-    <div class="play hidden">
-      <button class="close--play">&times;</button>
-      <h2 class="modal-title">Let's Play!</h2>
-      <p class="compo">
-        Ready for a challenge? This is where your game or interactive content
-        will live. Stay tuned for more updates!
-      </p>
-    </div>
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <p>
+          I balance technical execution with strategic oversight. With a
+          background that bridges finance, agriculture, and web development, I
+          build robust digital solutions specializing in modern JavaScript,
+          TypeScript, and React environments.
+        </p>
 
-    <div class="next hidden">
-      <button class="close--next">&times;</button>
-      <h2 class="modal-title">Let's Play!</h2>
-      <p class="compo">
-        Ready for a challenge? This is where your game or interactive content
-        will live. Stay tuned for more updates!
-      </p>
-    </div>
+        <### My Tech Stack ###>
+        <div class="skills-container">
+          <div class="skill-badge">JavaScript</div>
+          <div class="skill-badge">TypeScript</div>
+          <div class="skill-badge">React</div>
+          <div class="skill-badge">Sass / SCSS</div>
+          <div class="skill-badge">Supabase / Backend</div>
+          <div class="skill-badge">Project Management</div>
+        </div>
+      </div>
+    </section>
 
-    <div class="overlay hidden"></div>
+    <section class="projects" id="projects">
+      <h2 class="heading">Latest <span>Projects</span></h2>
 
-    <script src="script.js"></script>
+      <div class="projects-container">
+        <div class="project-box">
+          <div class="project-info">
+            <h4>HearthRealty</h4>
+            <p>
+              A comprehensive property management platform built with robust
+              backend integration and secure data handling.
+            </p>
+            <a href=" https://emperorluffy.github.io/chunga/" target="_blank"
+              ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+              Demo</a
+            >
+          </div>
+        </div>
+
+        <div class="project-box">
+          <div class="project-info">
+            <h4>Mapty App</h4>
+            <p>
+              A dynamic workout tracking application using geolocation APIs and
+              interactive Leaflet maps to log running and cycling activities.
+            </p>
+            <!-- Replace the '#' with your actual live deployment link -->
+            <a href="https://emperorluffy.github.io/Mapty/" target="_blank"
+              ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+              Demo</a
+            >
+          </div>
+        </div>
+
+        <div class="project-box">
+          <div class="project-info">
+            <h4>Interactive Web Apps</h4>
+            <p>
+              Dynamic, state-driven JavaScript applications including custom
+              dashboards and interactive user interfaces.
+            </p>
+            <a href="https://emperorluffy.github.io/pigame/" target="_blank"
+              ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+              Demo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Get In <span>Touch!</span></h2>
+
+      <form id="contact-form" onsubmit="sendEmail(event)">
+        <div class="input-box">
+          <input
+            type="text"
+            name="from_name"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            name="reply_to"
+            placeholder="Email Address"
+            required
+          />
+        </div>
+        <textarea
+          name="message"
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2026 | All Rights Reserved.</p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
   </body>
 </html>
