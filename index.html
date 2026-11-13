@@ -9,162 +9,268 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- Top Navigation Header -->
     <header class="header">
-      <a href="#" class="logo">Hi!Welcome<span>.</span></a>
-
-      <nav class="navbar">
+      <div class="logo-container">
+        <span class="logo-text">Thomas Gakumu</span>
+        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i></span>
+      </div>
+      <nav class="navbar" id="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-
       <div class="menu-icon" id="menu-icon">
         <i class="fa-solid fa-bars"></i>
       </div>
     </header>
 
-    <section class="home" id="home">
-      <div class="home-content">
-        <h3>Hello, It's Me</h3>
-        <h1>Thomas Gakumu</h1>
-        <h3>
-          And I'm a
-          <span class="multiple-text">Web Developer & Project Manager</span>
-        </h3>
-        <p>
-          Building clean, high-performance web applications and leading
-          technical projects from concept to deployment.
-        </p>
+    <!-- Main Feed Container -->
+    <main class="feed-container">
 
-        <div class="social-media">
-          <a href="https://github.com/emperorluffy" target="_blank"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/thomas-gakumu-ab081b1b8/"
-            target="_blank"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="https://x.com/tacticalyunbten" target="_blank"
-            ><i class="fa-brands fa-twitter"></i
-          ></a>
+      <!-- Post 1: Profile & Intro -->
+      <section class="post-card" id="home">
+        <div class="post-avatar-col">
+          <div class="avatar">
+            <img src="profile.png" alt="Thomas Gakumu" />
+          </div>
+          <div class="connector-line"></div>
         </div>
+        <div class="post-content-col">
+          <div class="post-header">
+            <div class="user-info">
+              <h3>Thomas Gakumu <span class="verified"><i class="fa-solid fa-circle-check"></i></span></h3>
+              <span class="handle">@thomas_gakumu</span>
+            </div>
+            <span class="timestamp">Pinned Post</span>
+          </div>
 
-        <a href="#projects" class="btn">View My Work</a>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="about-content">
-        <h2 class="heading">About <span>Me</span></h2>
-        <p>
-          I balance technical execution with strategic oversight. With a
-          background that bridges finance, agriculture, and web development, I
-          build robust digital solutions specializing in modern JavaScript,
-          TypeScript, and React environments.
-        </p>
-
-        <### My Tech Stack ###>
-        <div class="skills-container">
-          <div class="skill-badge">JavaScript</div>
-          <div class="skill-badge">TypeScript</div>
-          <div class="skill-badge">React</div>
-          <div class="skill-badge">Sass / SCSS</div>
-          <div class="skill-badge">Supabase / Backend</div>
-          <div class="skill-badge">Project Management</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <h2 class="heading">Latest <span>Projects</span></h2>
-
-      <div class="projects-container">
-        <div class="project-box">
-          <div class="project-info">
-            <h4>HearthRealty</h4>
-            <p>
-              A comprehensive property management platform built with robust
-              backend integration and secure data handling.
+          <div class="post-body">
+            <h1 class="post-title">Web Developer & Project Manager 🚀</h1>
+            <p class="post-text">
+              Bridging technology, financial analysis, and sustainable agriculture. Building high-performance web applications and leading multi-disciplinary projects from concept to deployment.
             </p>
-            <a href=" https://emperorluffy.github.io/chunga/" target="_blank"
-              ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
-              Demo</a
-            >
+
+            <div class="profile-stats">
+              <span><strong>3.5k</strong> Followers</span>
+              <span><strong>180</strong> Following</span>
+            </div>
+
+            <div class="profile-tags">
+              <span class="tag"><i class="fa-solid fa-code"></i> Web Dev</span>
+              <span class="tag"><i class="fa-solid fa-chart-line"></i> CFA (360° Careers)</span>
+              <span class="tag"><i class="fa-solid fa-seedling"></i> Agronomist</span>
+            </div>
+          </div>
+
+          <div class="engagement-bar">
+            <button class="engage-btn like-btn"><i class="fa-regular fa-heart"></i> <span class="count">348</span></button>
+            <button class="engage-btn"><i class="fa-regular fa-comment"></i> 42</button>
+            <button class="engage-btn"><i class="fa-solid fa-retweet"></i> 18</button>
+            <button class="engage-btn"><i class="fa-regular fa-share-from-square"></i></button>
           </div>
         </div>
+      </section>
 
-        <div class="project-box">
-          <div class="project-info">
-            <h4>Mapty App</h4>
-            <p>
-              A dynamic workout tracking application using geolocation APIs and
-              interactive Leaflet maps to log running and cycling activities.
+      <!-- Post 2: About & Multidisciplinary Skills -->
+      <section class="post-card" id="about">
+        <div class="post-avatar-col">
+          <div class="avatar">
+            <img src="profile.png" alt="Thomas Gakumu" />
+          </div>
+          <div class="connector-line"></div>
+        </div>
+        <div class="post-content-col">
+          <div class="post-header">
+            <div class="user-info">
+              <h3>Thomas Gakumu <span><i class="fa-solid fa-circle-check"></i></span></h3>
+              <span class="handle">@thomas_gakumu</span>
+            </div>
+            <span class="timestamp">2h ago</span>
+          </div>
+
+          <div class="post-body">
+            <h2 class="heading-sm">Multidisciplinary Expertise 🧵 (1/2)</h2>
+            <p class="post-text">
+              My professional journey spans across distinct domains, combining technical precision with analytical rigor and field expertise:
             </p>
-            <!-- Replace the '#' with your actual live deployment link -->
-            <a href="https://emperorluffy.github.io/Mapty/" target="_blank"
-              ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
-              Demo</a
-            >
+
+            <div class="expertise-grid">
+              <div class="expertise-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h4>Web Development & PM</h4>
+                <p>Modern JavaScript, TypeScript, React, UI/UX architecture, and agile project management.</p>
+              </div>
+              <div class="expertise-card">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h4>Certified Financial Analyst</h4>
+                <p>Trained via 360 Degree Careers. Financial modeling, risk assessment, and market valuation.</p>
+              </div>
+              <div class="expertise-card">
+                <i class="fa-solid fa-seedling"></i>
+                <h4>Agronomist</h4>
+                <p>Diploma in General Agriculture. Sustainable farming practices, crop management, and agri-tech solutions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="engagement-bar">
+            <button class="engage-btn like-btn"><i class="fa-regular fa-heart"></i> <span class="count">215</span></button>
+            <button class="engage-btn"><i class="fa-regular fa-comment"></i> 14</button>
+            <button class="engage-btn"><i class="fa-solid fa-retweet"></i> 9</button>
+            <button class="engage-btn"><i class="fa-regular fa-share-from-square"></i></button>
           </div>
         </div>
+      </section>
 
-        <div class="project-box">
-          <div class="project-info">
-            <h4>Interactive Web Apps</h4>
-            <p>
-              Dynamic, state-driven JavaScript applications including custom
-              dashboards and interactive user interfaces.
-            </p>
-            <a href="https://emperorluffy.github.io/pigame/" target="_blank"
-              ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
-              Demo</a
-            >
+      <!-- Post 3: Projects Showcase -->
+      <section class="post-card" id="projects">
+        <div class="post-avatar-col">
+          <div class="avatar">
+            <img src="profile.png" alt="Thomas Gakumu" />
+          </div>
+          <div class="connector-line"></div>
+        </div>
+        <div class="post-content-col">
+          <div class="post-header">
+            <div class="user-info">
+              <h3>Thomas Gakumu <span><i class="fa-solid fa-circle-check"></i></span></h3>
+              <span class="handle">@thomas_gakumu</span>
+            </div>
+            <span class="timestamp">5h ago</span>
+          </div>
+
+          <div class="post-body">
+            <h2 class="heading-sm">Featured Projects & Live Works 💻 (2/2)</h2>
+            <p class="post-text">Here are some of my recent web applications and platforms deployed live:</p>
+
+            <div class="projects-grid">
+              <!-- Project 1 -->
+              <div class="project-item">
+                <div class="project-meta">
+                  <h4>Kapul Platform</h4>
+                  <span class="project-tag">Web App</span>
+                </div>
+                <p>Interactive full-stack web platform built for seamless user engagement and modern workflows.</p>
+                <a href="https://kapul.onrender.com/" target="_blank" class="project-link">
+                  <span>View Live Demo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="project-item">
+                <div class="project-meta">
+                  <h4>Thomas Sheshine Portfolio</h4>
+                  <span class="project-tag">Portfolio</span>
+                </div>
+                <p>Sleek, responsive professional portfolio showcasing creative web design and development.</p>
+                <a href="https://thomas-sheshine.netlify.app/" target="_blank" class="project-link">
+                  <span>View Live Demo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="project-item">
+                <div class="project-meta">
+                  <h4>TCreations</h4>
+                  <span class="project-tag">Creative Hub</span>
+                </div>
+                <p>Dynamic digital showcase and creative projects repository built with cutting-edge web technologies.</p>
+                <a href="https://emperorluffy.github.io/tcreations/" target="_blank" class="project-link">
+                  <span>View Live Demo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- Project 4: HearthRealty -->
+              <div class="project-item">
+                <div class="project-meta">
+                  <h4>HearthRealty</h4>
+                  <span class="project-tag">Real Estate</span>
+                </div>
+                <p>Comprehensive property management platform with secure backend integration.</p>
+                <a href="https://emperorluffy.github.io/chunga/" target="_blank" class="project-link">
+                  <span>View Live Demo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <!-- Project 5: Mapty -->
+              <div class="project-item">
+                <div class="project-meta">
+                  <h4>Mapty App</h4>
+                  <span class="project-tag">JavaScript</span>
+                </div>
+                <p>Workout tracking application using geolocation APIs and interactive Leaflet maps.</p>
+                <a href="https://emperorluffy.github.io/Mapty/" target="_blank" class="project-link">
+                  <span>View Live Demo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="engagement-bar">
+            <button class="engage-btn like-btn"><i class="fa-regular fa-heart"></i> <span class="count">512</span></button>
+            <button class="engage-btn"><i class="fa-regular fa-comment"></i> 38</button>
+            <button class="engage-btn"><i class="fa-solid fa-retweet"></i> 27</button>
+            <button class="engage-btn"><i class="fa-regular fa-share-from-square"></i></button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="contact" id="contact">
-      <h2 class="heading">Get In <span>Touch!</span></h2>
-
-      <form id="contact-form" onsubmit="sendEmail(event)">
-        <div class="input-box">
-          <input
-            type="text"
-            name="from_name"
-            placeholder="Full Name"
-            required
-          />
-          <input
-            type="email"
-            name="reply_to"
-            placeholder="Email Address"
-            required
-          />
+      <!-- Post 4: Contact / Reply Section -->
+      <section class="post-card last-card" id="contact">
+        <div class="post-avatar-col">
+          <div class="avatar">
+            <img src="profile.png" alt="Thomas Gakumu" />
+          </div>
         </div>
-        <textarea
-          name="message"
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
+        <div class="post-content-col">
+          <div class="post-header">
+            <div class="user-info">
+              <h3>Thomas Gakumu <span><i class="fa-solid fa-circle-check"></i></span></h3>
+              <span class="handle">@thomas_gakumu</span>
+            </div>
+            <span class="timestamp">1d ago</span>
+          </div>
+
+          <div class="post-body">
+            <h2 class="heading-sm">Let's Connect & Collaborate! 💬</h2>
+            <p class="post-text">Drop a reply or send a direct message below. I'm always open to discussing new tech projects, financial analytics, or agricultural innovations.</p>
+
+            <form id="contact-form" onsubmit="sendEmail(event)" class="contact-form">
+              <div class="input-row">
+                <input type="text" name="from_name" placeholder="Your Name" required />
+                <input type="email" name="reply_to" placeholder="Your Email" required />
+              </div>
+              <textarea name="message" rows="4" placeholder="Write your reply / message..." required></textarea>
+              <button type="submit" class="submit-btn">Post Reply</button>
+            </form>
+          </div>
+
+          <div class="engagement-bar">
+            <button class="engage-btn like-btn"><i class="fa-regular fa-heart"></i> <span class="count">189</span></button>
+            <button class="engage-btn"><i class="fa-regular fa-comment"></i> 8</button>
+            <button class="engage-btn"><i class="fa-solid fa-retweet"></i> 5</button>
+            <button class="engage-btn"><i class="fa-regular fa-share-from-square"></i></button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright &copy; 2026 | All Rights Reserved.</p>
-      </div>
-      <div class="footer-iconTop">
-        <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+      <div class="footer-content">
+        <p>&copy; 2026 Thomas Gakumu. All Rights Reserved.</p>
+        <div class="social-links">
+          <a href="https://github.com/emperorluffy" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/thomas-gakumu-ab081b1b8/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://x.com/tacticalyunbten" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
       </div>
     </footer>
   </body>

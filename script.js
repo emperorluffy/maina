@@ -1,5 +1,6 @@
 'use strict';
 emailjs.init('UKlUrVqvzAN_5skk7');
+
 // Toggle Mobile Menu
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('.navbar');
@@ -9,31 +10,33 @@ menuIcon.addEventListener('click', () => {
   navbar.classList.toggle('active');
 });
 
-// Scroll Sections Active Link Activation
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('header nav a');
+// Like Button Interactivity for Thread Theme
+document.querySelectorAll('.like-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const icon = btn.querySelector('i');
+    const countSpan = btn.querySelector('.count');
+    let count = parseInt(countSpan.textContent);
 
-window.addEventListener('scroll', () => {
-  let top = window.scrollY;
-
-  sections.forEach((sec) => {
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute('id');
-
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach((links) => {
-        links.classList.remove('active');
-        document
-          .querySelector('header nav a[href*=' + id + ']')
-          .classList.add('active');
-      });
+    if (btn.classList.contains('liked')) {
+      btn.classList.remove('liked');
+      icon.classList.remove('fa-solid');
+      icon.classList.add('fa-regular');
+      countSpan.textContent = count - 1;
+    } else {
+      btn.classList.add('liked');
+      icon.classList.remove('fa-regular');
+      icon.classList.add('fa-solid');
+      countSpan.textContent = count + 1;
     }
   });
+});
 
-  // Remove menu toggle icons when clicking nav links (scrolls down)
-  menuIcon.classList.remove('fa-xmark');
-  navbar.classList.remove('active');
+// Close mobile menu on nav link click
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuIcon.classList.remove('fa-xmark');
+    navbar.classList.remove('active');
+  });
 });
 
 function sendEmail(e) {
@@ -43,12 +46,12 @@ function sendEmail(e) {
 
   emailjs.sendForm('service_nzx2dix', 'template_a9wwmp9', form).then(
     () => {
-      alert('Message sent successfully! I will get back to you soon.');
+      alert('Reply posted successfully! I will get back to you soon.');
       form.reset();
     },
     (error) => {
       alert(
-        'Failed to send the message. Error details: ' + JSON.stringify(error),
+        'Failed to send message. Error details: ' + JSON.stringify(error),
       );
     },
   );
