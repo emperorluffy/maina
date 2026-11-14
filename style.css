@@ -1,4 +1,4 @@
-/* Global Reset & Variables (Dark Mode Default) */
+/* Global Reset & Variables (Light Mode Default) */
 * {
   margin: 0;
   padding: 0;
@@ -11,20 +11,6 @@
 }
 
 :root {
-  --bg-color: #101010;
-  --card-bg: #181818;
-  --card-hover: #202020;
-  --border-color: #262626;
-  --text-color: #f3f3f3;
-  --text-muted: #888888;
-  --accent-color: #0095f6;
-  --verified-color: #0095f6;
-  --tag-bg: #222222;
-}
-
-/* Light Mode Variables */
-[data-theme="light"],
-body.light-mode {
   --bg-color: #f6f8fa;
   --card-bg: #ffffff;
   --card-hover: #f0f2f5;
@@ -34,6 +20,20 @@ body.light-mode {
   --accent-color: #0969da;
   --verified-color: #0969da;
   --tag-bg: #eaeef2;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"],
+body.dark-mode {
+  --bg-color: #101010;
+  --card-bg: #181818;
+  --card-hover: #202020;
+  --border-color: #262626;
+  --text-color: #f3f3f3;
+  --text-muted: #888888;
+  --accent-color: #0095f6;
+  --verified-color: #0095f6;
+  --tag-bg: #222222;
 }
 
 html {
@@ -110,7 +110,7 @@ body {
   gap: 1.5rem;
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle Button (Light Default -> show moon) */
 .theme-toggle-btn {
   background: var(--bg-color);
   border: 1px solid var(--border-color);
@@ -124,6 +124,7 @@ body {
   cursor: pointer;
   font-size: 1.6rem;
   transition: background 0.2s ease, transform 0.2s ease;
+  position: relative;
 }
 
 .theme-toggle-btn:hover {
@@ -132,23 +133,23 @@ body {
 }
 
 .theme-toggle-btn .sun-icon {
-  display: inline-block;
+  display: none;
   color: #f39c12;
 }
 
 .theme-toggle-btn .moon-icon {
-  display: none;
+  display: inline-block;
   color: #374151;
 }
 
-[data-theme="light"] .theme-toggle-btn .sun-icon,
-body.light-mode .theme-toggle-btn .sun-icon {
-  display: none !important;
+[data-theme="dark"] .theme-toggle-btn .sun-icon,
+body.dark-mode .theme-toggle-btn .sun-icon {
+  display: inline-block !important;
 }
 
-[data-theme="light"] .theme-toggle-btn .moon-icon,
-body.light-mode .theme-toggle-btn .moon-icon {
-  display: inline-block !important;
+[data-theme="dark"] .theme-toggle-btn .moon-icon,
+body.dark-mode .theme-toggle-btn .moon-icon {
+  display: none !important;
 }
 
 .menu-icon {
