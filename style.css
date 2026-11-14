@@ -1,4 +1,4 @@
-/* Global Reset & Variables */
+/* Global Reset & Variables (Dark Mode Default) */
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +22,20 @@
   --tag-bg: #222222;
 }
 
+/* Light Mode Variables */
+[data-theme="light"],
+body.light-mode {
+  --bg-color: #f6f8fa;
+  --card-bg: #ffffff;
+  --card-hover: #f0f2f5;
+  --border-color: #d0d7de;
+  --text-color: #1f2328;
+  --text-muted: #656d76;
+  --accent-color: #0969da;
+  --verified-color: #0969da;
+  --tag-bg: #eaeef2;
+}
+
 html {
   font-size: 62.5%;
   background: var(--bg-color);
@@ -34,6 +48,7 @@ body {
   line-height: 1.6;
   padding-top: 7rem;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Header Navbar */
@@ -43,7 +58,7 @@ body {
   left: 0;
   width: 100%;
   height: 6.5rem;
-  background: rgba(16, 16, 16, 0.9);
+  background: var(--card-bg);
   backdrop-filter: blur(12px);
   display: flex;
   justify-content: space-between;
@@ -51,6 +66,7 @@ body {
   padding: 0 5%;
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .logo-container {
@@ -88,6 +104,53 @@ body {
   font-weight: 600;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--card-hover);
+  transform: scale(1.05);
+}
+
+.theme-toggle-btn .sun-icon {
+  display: inline-block;
+  color: #f39c12;
+}
+
+.theme-toggle-btn .moon-icon {
+  display: none;
+  color: #374151;
+}
+
+[data-theme="light"] .theme-toggle-btn .sun-icon,
+body.light-mode .theme-toggle-btn .sun-icon {
+  display: none !important;
+}
+
+[data-theme="light"] .theme-toggle-btn .moon-icon,
+body.light-mode .theme-toggle-btn .moon-icon {
+  display: inline-block !important;
+}
+
 .menu-icon {
   font-size: 2.4rem;
   color: var(--text-color);
@@ -112,7 +175,7 @@ body {
   border-radius: 1.6rem;
   padding: 2rem;
   margin-bottom: 1.5rem;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .post-card:hover {
@@ -134,13 +197,14 @@ body {
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid var(--border-color);
-  background: #222;
+  background: var(--bg-color);
 }
 
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 15%;
 }
 
 .connector-line {
@@ -157,7 +221,7 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  min-width: 0; /* Prevents flex items from overflowing */
+  min-width: 0;
 }
 
 .post-header {
@@ -206,7 +270,7 @@ body {
 }
 
 .post-text {
-  color: #d1d1d1;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
   line-height: 1.6;
   word-break: break-word;
@@ -253,6 +317,92 @@ body {
 
 .tag i {
   color: var(--accent-color);
+}
+
+.whatsapp-tag {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-tag i {
+  color: #25d366;
+}
+
+/* Floating Orange Notification Badge on top of WhatsApp icon */
+.social-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-wrapper .notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff7700; /* Orange color */
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--card-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+
+.btn-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon-wrap .notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff7700;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #25d366;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  opacity: 0.9;
+}
+
+.whatsapp-btn i {
+  font-size: 2rem;
 }
 
 /* Expertise Grid */
@@ -405,7 +555,7 @@ body {
   gap: 2rem;
   margin-top: 0.5rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid var(--border-color);
   flex-wrap: wrap;
 }
 
@@ -436,6 +586,7 @@ body {
   padding: 3rem 5%;
   margin-top: 4rem;
   text-align: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-content {
@@ -456,6 +607,7 @@ body {
 .social-links {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .social-links a {
@@ -488,12 +640,12 @@ body {
     left: -100%;
     width: 100%;
     height: calc(100vh - 6.5rem);
-    background: var(--bg-color);
+    background: var(--card-bg);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3rem;
-    transition: left 0.3s ease;
+    transition: left 0.3s ease, background 0.3s ease;
     border-top: 1px solid var(--border-color);
     z-index: 999;
   }
@@ -535,21 +687,10 @@ body {
   .submit-btn {
     width: 100%;
     align-self: center;
-    padding: 1.2rem;
   }
 
   .engagement-bar {
     gap: 1.2rem;
     justify-content: space-between;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size: 55%;
-  }
-
-  .post-card {
-    padding: 1.2rem 1rem;
   }
 }

@@ -25,8 +25,14 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="menu-icon" id="menu-icon">
-        <i class="fa-solid fa-bars"></i>
+      <div class="header-right">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+          <i class="fa-solid fa-sun sun-icon"></i>
+          <i class="fa-solid fa-moon moon-icon"></i>
+        </button>
+        <div class="menu-icon" id="menu-icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
     </header>
 
@@ -65,6 +71,9 @@
               <span class="tag"><i class="fa-solid fa-code"></i> Web Dev</span>
               <span class="tag"><i class="fa-solid fa-chart-line"></i> CFA (360° Careers)</span>
               <span class="tag"><i class="fa-solid fa-seedling"></i> Agronomist</span>
+              <a href="https://wa.link/64qa7c" target="_blank" class="tag whatsapp-tag">
+                <span class="btn-icon-wrap"><i class="fa-brands fa-whatsapp"></i><span class="notification-badge">1</span></span> Chat on WhatsApp
+              </a>
             </div>
           </div>
 
@@ -221,7 +230,46 @@
         </div>
       </section>
 
-      <!-- Post 4: Contact / Reply Section -->
+      <!-- Post 4: Hairdressing Hobby -->
+      <section class="post-card">
+        <div class="post-avatar-col">
+          <div class="avatar">
+            <img src="profile.png" alt="Thomas Gakumu" />
+          </div>
+          <div class="connector-line"></div>
+        </div>
+        <div class="post-content-col">
+          <div class="post-header">
+            <div class="user-info">
+              <h3>Thomas Gakumu <span><i class="fa-solid fa-circle-check"></i></span></h3>
+              <span class="handle">@thomas_gakumu</span>
+            </div>
+            <span class="timestamp">12h ago</span>
+          </div>
+
+          <div class="post-body">
+            <h2 class="heading-sm">Styling Hair as a Creative Hobby ✂️✨</h2>
+            <p class="post-text">
+              Beyond code, finance, and agriculture, I genuinely enjoy hairdressing as a creative hobby. Precision, patience, and styling allow me to express my artistic side—attention to detail that surprisingly translates well into clean UI design and structured problem-solving!
+            </p>
+
+            <div class="profile-tags">
+              <span class="tag"><i class="fa-solid fa-scissors"></i> Hair Styling</span>
+              <span class="tag"><i class="fa-solid fa-palette"></i> Creativity</span>
+              <span class="tag"><i class="fa-solid fa-gem"></i> Precision & Detail</span>
+            </div>
+          </div>
+
+          <div class="engagement-bar">
+            <button class="engage-btn like-btn"><i class="fa-regular fa-heart"></i> <span class="count">274</span></button>
+            <button class="engage-btn"><i class="fa-regular fa-comment"></i> 19</button>
+            <button class="engage-btn"><i class="fa-solid fa-retweet"></i> 12</button>
+            <button class="engage-btn"><i class="fa-regular fa-share-from-square"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Post 5: Contact / Reply Section -->
       <section class="post-card last-card" id="contact">
         <div class="post-avatar-col">
           <div class="avatar">
@@ -240,6 +288,16 @@
           <div class="post-body">
             <h2 class="heading-sm">Let's Connect & Collaborate! 💬</h2>
             <p class="post-text">Drop a reply or send a direct message below. I'm always open to discussing new tech projects, financial analytics, or agricultural innovations.</p>
+
+            <div class="whatsapp-cta-box" style="margin-bottom: 1.5rem;">
+              <a href="https://wa.link/64qa7c" target="_blank" class="whatsapp-btn">
+                <span class="btn-icon-wrap">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span class="notification-badge">1</span>
+                </span>
+                Chat directly on WhatsApp
+              </a>
+            </div>
 
             <form id="contact-form" onsubmit="sendEmail(event)" class="contact-form">
               <div class="input-row">
@@ -270,6 +328,10 @@
           <a href="https://github.com/emperorluffy" target="_blank"><i class="fa-brands fa-github"></i></a>
           <a href="https://www.linkedin.com/in/thomas-gakumu-ab081b1b8/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           <a href="https://x.com/tacticalyunbten" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://wa.link/64qa7c" target="_blank" class="social-icon-wrapper" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="notification-badge">1</span>
+          </a>
         </div>
       </div>
     </footer>
