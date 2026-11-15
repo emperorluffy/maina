@@ -87,7 +87,7 @@ function sendEmail(e) {
     try {
       await emailjs.sendForm('service_nzx2dix', 'template_a9wwmp9', form);
 
-      // Display sleek in-page thread reply success card
+      // Display sleek in-page thread reply success card (stays until reload)
       showThreadReplySuccess(form);
       form.reset();
     } catch (error) {
@@ -122,10 +122,5 @@ function showThreadReplySuccess(form) {
   `;
 
   form.parentNode.insertBefore(successBanner, form);
-
-  // Auto remove after 7 seconds
-  setTimeout(() => {
-    successBanner.classList.add('fade-out');
-    setTimeout(() => successBanner.remove(), 500);
-  }, 7000);
+  // Stays persistent on the thread post until browser reload.
 }
