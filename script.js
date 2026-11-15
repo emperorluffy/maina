@@ -79,15 +79,53 @@ function sendEmail(e) {
 
   (async () => {
     const form = document.getElementById('contact-form');
+    const submitBtn = form.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Posting Reply...';
+    submitBtn.disabled = true;
 
     try {
       await emailjs.sendForm('service_nzx2dix', 'template_a9wwmp9', form);
-      alert('Reply posted successfully! I will get back to you soon.');
+
+      // Display sleek in-page thread reply success card
+      showThreadReplySuccess(form);
       form.reset();
     } catch (error) {
       alert(
         'Failed to send message. Error details: ' + JSON.stringify(error),
       );
+    } finally {
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled = false;
     }
   })();
+}
+
+function showThreadReplySuccess(form) {
+  let existing = document.getElementById('thread-success-banner');
+  if (existing) existing.remove();
+
+  const successBanner = document.createElement('div');
+  successBanner.id = 'thread-success-banner';
+  successBanner.className = 'thread-success-popup';
+  successBanner.innerHTML = `
+    <div class="success-avatar">
+      <img src="profile.png" alt="Thomas Gakumu" />
+    </div>
+    <div class="success-content">
+      <div class="success-header">
+        <strong>Thomas Gakumu</strong> <i class="fa-solid fa-circle-check verified"></i>
+        <span class="handle">@thomas_gakumu</span>
+      </div>
+      <p class="success-msg">💬 Reply posted successfully! Thank you for reaching out. I will get back to you soon.</p>
+    </div>
+  `;
+
+  form.parentNode.insertBefore(successBanner, form);
+
+  // Auto remove after 7 seconds
+  setTimeout(() => {
+    successBanner.classList.add('fade-out');
+    setTimeout(() => successBanner.remove(), 500);
+  }, 7000);
 }

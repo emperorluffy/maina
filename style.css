@@ -110,7 +110,7 @@ body {
   gap: 1.5rem;
 }
 
-/* Theme Toggle Button (Light Default -> show moon) */
+/* Theme Toggle Button */
 .theme-toggle-btn {
   background: var(--bg-color);
   border: 1px solid var(--border-color);
@@ -330,6 +330,80 @@ body.dark-mode .theme-toggle-btn .moon-icon {
   color: #25d366;
 }
 
+/* Thread Reply Success Popup / Banner */
+.thread-success-popup {
+  display: flex;
+  background: var(--bg-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  animation: slideDown 0.3s ease-out;
+  box-shadow: 0 4px 12px rgba(9, 105, 218, 0.15);
+}
+
+.thread-success-popup.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.success-avatar {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+}
+
+.success-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 15%;
+}
+
+.success-content {
+  flex-grow: 1;
+}
+
+.success-header {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.success-header .verified {
+  color: var(--verified-color);
+  font-size: 1.2rem;
+}
+
+.success-header .handle {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.success-msg {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Floating Orange Notification Badge on top of WhatsApp icon */
 .social-icon-wrapper {
   position: relative;
@@ -474,7 +548,7 @@ body.dark-mode .theme-toggle-btn .moon-icon {
 
 .project-tag {
   font-size: 1.1rem;
-  background: rgba(0, 149, 246, 0.15);
+  background: rgba(9, 105, 218, 0.15);
   color: var(--accent-color);
   padding: 0.2rem 0.8rem;
   border-radius: 1rem;
